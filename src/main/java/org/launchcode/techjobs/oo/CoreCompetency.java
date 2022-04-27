@@ -21,10 +21,10 @@ public class CoreCompetency extends JobField{
 
     // Custom toString, equals, and hashCode methods:
 
-    @Override
+    /*@Override
     public String toString() {
         return value;
-    }
+    }*/
 
     @Override
     public boolean equals(Object o) {

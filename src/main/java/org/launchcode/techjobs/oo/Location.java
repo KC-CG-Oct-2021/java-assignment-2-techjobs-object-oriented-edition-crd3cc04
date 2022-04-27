@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class Location extends JobField{
 
-    private int id;
+    /*private int id;
     private static int nextId = 1;
-    private String value;
+    private String value;*/
 
     public Location() {
         id = nextId;
@@ -22,10 +22,10 @@ public class Location extends JobField{
 
     // Custom toString, equals, and hashCode methods:
 
-    @Override
+    /*@Override
     public String toString() {
         return value;
-    }
+    }*/
 
     @Override
     public boolean equals(Object o) {
