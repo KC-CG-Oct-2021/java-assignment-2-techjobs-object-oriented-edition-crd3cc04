@@ -8,12 +8,12 @@ public class Employer {
     private static int nextId = 1;
     private String value;
 
-    public Employer() {
+    public Employer() { //constructor that assigns value to id field and generates different id number for new Employer object
         id = nextId;
         nextId++;
     }
 
-    public Employer(String value) {
+    public Employer(String value) { //constructor assigns a value to the value field, it also calls the first constructor with this.() that initializes id
         this();
         this.value = value;
     }

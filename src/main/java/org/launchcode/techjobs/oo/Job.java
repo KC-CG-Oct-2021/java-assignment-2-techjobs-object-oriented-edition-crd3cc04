@@ -22,4 +22,23 @@ public class Job {
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
+    public Job(){
+        id = nextId;
+        nextId++;
+    }
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency){
+        this();
+        this.name = name;
+        this.employer = employer;
+        this.location = location;
+        this.positionType = positionType;
+        this.coreCompetency = coreCompetency;
+    }
+   /* @Override
+    public boolean equals(Object o){
+        if (this == 0) return true;
+        if (!(o instanceof Job)) return false;
+        Job job = (Job) 0;
+        return id == job.id && name.equals(job.name) && employer.equals(job.employer) && location.equals(job.location) && positionType.equals(job.positionType) && coreCompetency.equals(job.coreCompetency)
+    }*/
 }
