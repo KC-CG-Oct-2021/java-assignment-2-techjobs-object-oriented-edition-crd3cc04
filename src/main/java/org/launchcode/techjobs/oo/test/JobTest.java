@@ -1,5 +1,6 @@
 package org.launchcode.techjobs.oo.test;
 
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -42,7 +43,7 @@ public class JobTest {
     public void testJobForEquality(){
         Job testJob3 = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job testJob4 = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertFalse(testJob3.equals(testJob4));
+        assertNotEquals(testJob3, testJob4);
     }
 
     @Test
