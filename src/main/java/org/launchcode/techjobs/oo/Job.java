@@ -34,11 +34,60 @@ public class Job {
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
     }
-   /* @Override
+    @Override
     public boolean equals(Object o){
-        if (this == 0) return true;
+        if (this == o) return true;
         if (!(o instanceof Job)) return false;
-        Job job = (Job) 0;
-        return id == job.id && name.equals(job.name) && employer.equals(job.employer) && location.equals(job.location) && positionType.equals(job.positionType) && coreCompetency.equals(job.coreCompetency)
-    }*/
+        Job job = (Job) o;
+        return id == job.id && name.equals(job.name) && employer.equals(job.employer) && location.equals(job.location) && positionType.equals(job.positionType) && coreCompetency.equals(job.coreCompetency);
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(id);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Employer getEmployer() {
+        return employer;
+    }
+
+    public void setEmployer(Employer employer) {
+        this.employer = employer;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public PositionType getPositionType() {
+        return positionType;
+    }
+
+    public void setPositionType(PositionType positionType) {
+        this.positionType = positionType;
+    }
+
+    public CoreCompetency getCoreCompetency() {
+        return coreCompetency;
+    }
+
+    public void setCoreCompetency(CoreCompetency coreCompetency) {
+        this.coreCompetency = coreCompetency;
+    }
+
+    public int getId() {
+        return id;
+    }
 }
