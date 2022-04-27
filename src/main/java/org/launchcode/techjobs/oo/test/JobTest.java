@@ -39,20 +39,20 @@ public class JobTest {
     }
 
     @Test
-    public void testStringBeginsEndsWithNewLine(){ //test that returns string that contains blank line before and after jog info
+    public void testToStringStartsAndEndsWithNewLine(){ //test that returns string that contains blank line before and after jog info
         Job testJob3 = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertEquals('\n', testJob3.toString().charAt(0));
         assertEquals('\n', testJob3.toString().charAt(testJob3.toString().length() -1));
     }
 
     @Test
-    public void testContainsLabelAndDataForEachField(){
+    public void testToStringContainsCorrectLabelsAndData(){
         Job testJob4 = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertEquals("\nID: " + testJob4.getId() + "\nName: Product Tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n" , testJob4.toString());
     }
 
     @Test
-    public void testStringHandlesEmptyField(){
+    public void testToStringHandlesEmptyField(){
         Job testJob5 = new Job("Product Tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
         assertEquals("\nID: " + testJob5.getId() + "\nName: Product Tester\nEmployer: Data not available\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Data not available\n", testJob5.toString());
     }
