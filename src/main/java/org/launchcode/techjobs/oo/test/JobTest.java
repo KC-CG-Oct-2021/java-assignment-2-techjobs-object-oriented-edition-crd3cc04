@@ -39,6 +39,13 @@ public class JobTest {
     }
 
     @Test
+    public void testJobForEquality(){
+        Job testJob3 = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job testJob4 = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertFalse(testJob3.equals(testJob4));
+    }
+
+    @Test
     public void testToStringStartsAndEndsWithNewLine(){ //test that returns string that contains blank line before and after jog info
         Job testJob3 = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertEquals('\n', testJob3.toString().charAt(0));
