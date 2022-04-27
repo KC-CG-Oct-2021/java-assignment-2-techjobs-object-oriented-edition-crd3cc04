@@ -30,7 +30,8 @@ public class Location extends JobField{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Location)) return false;
+        /*if (!(o instanceof Location)) return false;*/
+        if (o == null || getClass() != o.getClass()) return false;
         Location location = (Location) o;
         return getId() == location.getId();
     }
@@ -53,8 +54,8 @@ public class Location extends JobField{
         return value;
     }
 
-    /*public void setValue(String value) {
+    public void setValue(String value) {
         this.value = value;
-    }*/
+    }
 
 }

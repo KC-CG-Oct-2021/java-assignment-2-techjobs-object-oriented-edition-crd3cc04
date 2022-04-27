@@ -14,7 +14,7 @@ public abstract class JobField {
         return id;
     }
 
-    public void setValue(String value) {
+    /*public void setValue(String value) {
         this.value = value;
-    }
+    }*/
 } //Make sure that any method coded in here is commented out in the other classes

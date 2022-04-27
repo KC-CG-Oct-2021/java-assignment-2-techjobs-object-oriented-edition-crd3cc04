@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class PositionType extends JobField{
 
-    private int id;
+    /*private int id;
     private static int nextId = 1;
-    private String value;
+    private String value;*/
 
     public PositionType() {
         id = nextId;
@@ -30,7 +30,8 @@ public class PositionType extends JobField{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof PositionType)) return false;
+        /*if (!(o instanceof PositionType)) return false;*/
+        if (o == null || getClass() != o.getClass()) return false;
         PositionType that = (PositionType) o;
         return id == that.id;
     }
@@ -52,8 +53,8 @@ public class PositionType extends JobField{
         return value;
     }
 
-    /*public void setValue(String value) {
+    public void setValue(String value) {
         this.value = value;
-    }*/
+    }
 
 }
