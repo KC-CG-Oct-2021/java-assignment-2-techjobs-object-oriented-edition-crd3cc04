@@ -90,4 +90,16 @@ public class Job {
     public int getId() {
         return id;
     }
+
+    @Override
+    public String toString(){ //code that creates the interface for the fields and lines
+        return "\n" +
+                "ID: " + id +
+                "\nName: " + name +
+                "\nEmployer: " + employer.getValue() +
+                "\nLocation: " + location.getValue() +
+                "\nPosition Type: " + positionType.getValue() +
+                "\nCore Competency: " + coreCompetency.getValue() +
+                "\n";
+    }
 }

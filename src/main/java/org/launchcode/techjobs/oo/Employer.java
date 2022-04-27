@@ -2,7 +2,7 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class Employer {
+public class Employer extends JobField{
 
     private int id;
     private static int nextId = 1;
@@ -40,16 +40,19 @@ public class Employer {
 
     // Getters and Setters:
 
-    public int getId() {
+    /*public int getId() {
         return id;
-    }
+    }*/
 
     public String getValue() {
+        if (value == null || value.isEmpty()) {
+            return "Data not available";
+        }
         return value;
     }
 
-    public void setValue(String value) {
+    /*public void setValue(String value) {
         this.value = value;
-    }
+    }*/
 
 }

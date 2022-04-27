@@ -23,7 +23,7 @@ public class JobTest {
 
     @Test
     public void testJobConstructorSetsAllFields(){ //test to see if all 6 fields are in the Job object and that they have been give their own unique id
-       Job testJob3 = new Job("Product tester", new Employer("ACE"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+       Job testJob3 = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertTrue(testJob3.getName() instanceof String);
         assertTrue(testJob3.getEmployer() instanceof Employer);
         assertTrue(testJob3.getLocation() instanceof Location);
@@ -32,12 +32,28 @@ public class JobTest {
 
         // considers equal if they have the same id value; considers not equal if they don't have the same id value
         assertEquals("Product Tester", testJob3.getName());
-        assertEquals("ACME", testJob3.getEmployer());
-        assertEquals("Desert", testJob3.getLocation());
-        assertEquals("Quality control", testJob3.getPositionType());
-        assertEquals("Persistence", testJob3.getCoreCompetency());
-
-
+        assertEquals("ACME", testJob3.getEmployer().getValue());
+        assertEquals("Desert", testJob3.getLocation().getValue());
+        assertEquals("Quality control", testJob3.getPositionType().getValue());
+        assertEquals("Persistence", testJob3.getCoreCompetency().getValue());
     }
 
+    @Test
+    public void testStringBeginsEndsWithNewLine(){ //test that returns string that contains blank line before and after jog info
+        Job testJob3 = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals('\n', testJob3.toString().charAt(0));
+        assertEquals('\n', testJob3.toString().charAt(testJob3.toString().length() -1));
+    }
+
+    @Test
+    public void testContainsLabelAndDataForEachField(){
+        Job testJob4 = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals("\nID: " + testJob4.getId() + "\nName: Product Tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n" , testJob4.toString());
+    }
+
+    @Test
+    public void testStringHandlesEmptyField(){
+        Job testJob5 = new Job("Product Tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
+        assertEquals("\nID: " + testJob5.getId() + "\nName: Product Tester\nEmployer: Data not available\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Data not available\n", testJob5.toString());
+    }
 }

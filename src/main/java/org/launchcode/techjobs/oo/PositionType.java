@@ -1,6 +1,8 @@
 package org.launchcode.techjobs.oo;
 
-public class PositionType {
+import java.util.Objects;
+
+public class PositionType extends JobField{
 
     private int id;
     private static int nextId = 1;
@@ -32,19 +34,24 @@ public class PositionType {
         PositionType that = (PositionType) o;
         return id == that.id;
     }
+    @Override
+    public int hashCode() { return Objects.hash(id); }
 
     // Getters and Setters:
 
-    public int getId() {
+    /*public int getId() {
         return id;
-    }
+    }*/
 
     public String getValue() {
+        if (value == null || value.isEmpty()) {
+            return "Data not available";
+        }
         return value;
     }
 
-    public void setValue(String value) {
+    /*public void setValue(String value) {
         this.value = value;
-    }
+    }*/
 
 }
