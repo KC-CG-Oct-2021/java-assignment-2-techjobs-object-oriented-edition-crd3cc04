@@ -2,18 +2,18 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class Employer {
+public class Employer extends JobField{
 
     private int id;
     private static int nextId = 1;
     private String value;
 
-    public Employer() {
+    public Employer() { //constructor that assigns value to id field and generates different id number for new Employer object
         id = nextId;
         nextId++;
     }
 
-    public Employer(String value) {
+    public Employer(String value) { //constructor assigns a value to the value field, it also calls the first constructor with this.() that initializes id
         this();
         this.value = value;
     }
@@ -40,16 +40,19 @@ public class Employer {
 
     // Getters and Setters:
 
-    public int getId() {
+    /*public int getId() {
         return id;
-    }
+    }*/
 
     public String getValue() {
+        if (value == null || value.isEmpty()) {
+            return "Data not available";
+        }
         return value;
     }
 
-    public void setValue(String value) {
+    /*public void setValue(String value) {
         this.value = value;
-    }
+    }*/
 
 }
